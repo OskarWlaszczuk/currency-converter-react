@@ -6,37 +6,42 @@ import Select from "./Select";
 import Resualts from "./Resualts";
 import Buttons from "./Buttons";
 import Fieldset from "./Fieldset";
+import Form from "./Form";
 
 function App() {
   return (
-    <form className="form">
-      <Fieldset
-        children={
-          <>
-            <Legend />
-            <Section
-              children={
-                <>
-                  <Header title="Kwota w PLN" />
-                  <Input />
-                </>
-              }
-            />
-            <Section
-              children={
-                <>
-                  <Header title="Wybierz walutę" />
-                  <Select />
-                </>
-              }
-            />
-            <Resualts />
-          </>
-        }
-      />
-      <Buttons />
-    </form>
+    <Form
+      children={
+        <>
+          <Fieldset
+            children={
+              <>
+                <Legend />
+                <Section
+                  children={
+                    <>
+                      <Header title="Kwota w PLN" />
+                      <Input />
+                    </>
+                  }
+                />
+                <Section
+                  children={
+                    <>
+                      <Header title="Wybierz walutę" />
+                      <Select />
+                    </>
+                  }
+                />
+                <Resualts />
+              </>
+            }
+          />
+          <Buttons />
+        </>
+      }
+    />
   );
-}
+};
 
 export default App;
