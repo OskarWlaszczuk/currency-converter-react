@@ -1,0 +1,10 @@
+.legend {
+    margin: auto;
+    padding: 15px;
+    font-weight: bold;
+    font-size: larger;
+    background-color: #4b2958;
+    border-radius: 20px;
+    text-align: center;
+    text-transform: capitalize;
+}
