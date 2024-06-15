@@ -1,0 +1,9 @@
+.form {
+    flex-basis: 75%;
+}
+
+@media (max-width:770px) {
+    .form {
+        flex-basis: 100%;
+    }
+}
