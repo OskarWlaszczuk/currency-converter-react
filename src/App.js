@@ -4,6 +4,7 @@ import Input from "./Input";
 import Legend from "./Legend";
 import Select from "./Select";
 import Resualts from "./Resualts";
+import Buttons from "./Buttons";
 
 function App() {
   return (
@@ -28,14 +29,7 @@ function App() {
         />
         <Resualts />
       </fieldset>
-      <section className="buttons">
-        <button className="buttons__button buttons__button--submit" type="submit">
-          Przelicz
-        </button>
-        <button className="buttons__button" type="reset">
-          Wyczyść
-        </button>
-      </section>
+      <Buttons />
     </form>
   );
 }
