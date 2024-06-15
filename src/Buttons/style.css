@@ -1,0 +1,56 @@
+.buttons {
+    display: flex;
+}
+
+@media (max-width:770px) {
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.buttons__button {
+    border: 2px solid #3f4273;
+    border-bottom: 15px solid #3f4273;
+    margin: 15px 3px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(51, 53, 88);
+    color: white;
+    font-size: x-large;
+    font-weight: bolder;
+    cursor: pointer;
+    flex-grow: 1;
+    flex-basis: 49%;
+    transition: 0.5s;
+}
+
+@media (max-width:770px) {
+    .buttons__button {
+        margin: 3px 0;
+        width: 75%;
+    }
+}
+
+.buttons__button:hover {
+    border: 2px solid #7e4040;
+    border-bottom: 15px solid #7e4040;
+    background-color: #7f3333;
+    transition: 0.2s;
+}
+
+.buttons__button:active {
+    border-top: 10px solid #7e4040;
+    border-bottom: 2px solid #7e4040;
+}
+
+.buttons__button--submit:hover {
+    border: 2px solid rgb(73, 135, 102);
+    border-bottom: 15px solid rgb(73, 135, 102);
+    background-color: rgb(51, 88, 68);
+}
+
+.buttons__button--submit:active {
+    border-top: 10px solid rgb(73, 135, 102);
+    border-bottom: 2px solid rgb(73, 135, 102);
+}
