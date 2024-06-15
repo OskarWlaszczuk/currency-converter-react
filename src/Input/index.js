@@ -11,7 +11,7 @@ const Input = () => (
         name="plnAmount"
         step="any"
         placeholder="Wpisz kwotę w PLN"
-        autofocus
+        autoFocus
     />
 );
 
