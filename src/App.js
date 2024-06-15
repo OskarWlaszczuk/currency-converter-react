@@ -3,6 +3,7 @@ import Header from "./Header";
 import Input from "./Input";
 import Legend from "./Legend";
 import Select from "./Select";
+import Resualts from "./Resualts";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
             </>
           }
         />
-        <p className="resualts "></p>
+        <Resualts />
       </fieldset>
       <section className="buttons">
         <button className="buttons__button buttons__button--submit" type="submit">
