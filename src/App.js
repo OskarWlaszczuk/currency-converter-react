@@ -1,12 +1,13 @@
 import Section from "./Section";
 import Header from "./Header";
 import Input from "./Input";
+import Legend from "./Legend";
 
 function App() {
   return (
     <form className="form">
       <fieldset className="form__fieldset">
-        <legend className="form__legend">kalkulator walut</legend>
+        <Legend />
         <Section
           children={
             <>
