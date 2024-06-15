@@ -1,0 +1,8 @@
+.select {
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bolder;
+    font-style: italic;
+    text-align: center;
+}
