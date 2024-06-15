@@ -2,6 +2,7 @@ import Section from "./Section";
 import Header from "./Header";
 import Input from "./Input";
 import Legend from "./Legend";
+import Select from "./Select";
 
 function App() {
   return (
@@ -16,17 +17,14 @@ function App() {
             </>
           }
         />
-        <section className="section">
-          <header className="section__header">
-            Wybierz walutę
-          </header>
-          <select name="currencyName" className="section__select">
-            <option value="USD">USD</option>
-            <option value="GBP">GBP</option>
-            <option value="CHF">CHF</option>
-            <option value="EUR">EUR</option>
-          </select>
-        </section>
+        <Section
+          children={
+            <>
+              <Header title="Wybierz walutę" />
+              <Select />
+            </>
+          }
+        />
         <p className="resualts "></p>
       </fieldset>
       <section className="buttons">
