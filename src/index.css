@@ -8,16 +8,16 @@ html {
 
 .content {
   font-family: "Lexend Deca", sans-serif;
-  padding: 11px;
   color: white;
-  background-color: rgb(37 39 70);
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 80%;
-  grid-template-rows: repeat(2, 1fr);
+  padding: 10px;
+  grid-template-columns: 65%;
+  grid-template-rows: repeat(2, min-content);
   justify-content: center;
-  align-items: start;
-  background-image: url("https://i.pinimg.com/originals/c7/e8/8b/c7e88bdf4d264980bc0965fe31c4077e.jpg");
+  align-content: space-evenly;
+  align-items: center;
+  background-image: url("https://youmatter.world/app/uploads/2021/04/local-currencies-alternative-economy2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
