@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./style.css";
+import currencies from "../currencies";
 
 const Form = ({ displayResult }) => {
     const [amount, setAmount] = useState(10);
@@ -12,14 +13,6 @@ const Form = ({ displayResult }) => {
         event.preventDefault();
         displayResult(amount, currency);
     };
-
-    const currencies = [
-        { name: "Dolar amerykański", id: "$", rate: 0.24 },
-        { name: "Euro", id: "€", rate: 0.20 },
-        { name: "Funt brytyjski", id: "£", rate: 0.22 },
-        { name: "Frank szwajcarski", id: "CHF", rate: 0.23 },
-    ];
-
     return (
         <form
             onSubmit={onFormSubmit}
