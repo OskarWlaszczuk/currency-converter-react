@@ -2,9 +2,18 @@ import { useState } from "react";
 import "./style.css";
 import currencies from "../currencies";
 
-const Form = ({ displayResult }) => {
-    const [amount, setAmount] = useState(10);
+const Form = ({ displayResult, setResult, result }) => {
+    const [amount, setAmount] = useState("");
     const [currency, setCurrency] = useState("Funt brytyjski");
+
+    const resetForm = () => {
+        setAmount("");
+        setCurrency("Funt brytyjski");
+
+        result && (
+            setResult("")
+        )
+    };
 
     const onSelectChange = ({ target }) => setCurrency(currency => currency = target.value);
     const onInputChange = ({ target }) => setAmount(amount => amount = target.value);
@@ -13,6 +22,7 @@ const Form = ({ displayResult }) => {
         event.preventDefault();
         displayResult(amount, currency);
     };
+
     return (
         <form
             onSubmit={onFormSubmit}
@@ -66,7 +76,8 @@ const Form = ({ displayResult }) => {
                         Przelicz
                     </button>
                     <button
-                        className="form__button" type="reset"
+                        className="form__button"
+                        onClick={resetForm}
                     >
                         Wyczyść
                     </button>

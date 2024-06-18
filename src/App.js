@@ -8,7 +8,8 @@ function App() {
 
   const displayResult = (amount, currency) => {
     const chosenCurrency = currencies.find(({ name }) => name === currency);
-    chosenCurrency && (
+
+    chosenCurrency && amount && (
       setResult(result => result =
         <>
           {amount}zł = <strong className="results__result">{(chosenCurrency.rate * amount).toFixed(2)}{chosenCurrency.shortcut}</strong>
@@ -18,7 +19,7 @@ function App() {
   };
   return (
     <>
-      <Form displayResult={displayResult} />
+      <Form displayResult={displayResult} setResult={setResult} result={result} />
       <Results result={result} />
     </>
   );
