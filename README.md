@@ -31,7 +31,7 @@ Here is my personal currency-conventer project that will immediately help you fi
 
 ## Try demo of currency-converter:
 
-[Demo currency-converter]()
+[Demo currency-converter](https://oskarwlaszczuk.github.io/currency-converter-react/)
 
 ![Project screenshot](https://raw.githubusercontent.com/OskarWlaszczuk/currency-converter-react/3f9a899b9dec436c7c4ea5fb588bd505809379a9/src/project-screenshot.png)
 
