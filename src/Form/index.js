@@ -12,7 +12,7 @@ const Form = ({ displayResult, setResult, result }) => {
 
         result && (
             setResult("")
-        )
+        );
     };
 
     const onSelectChange = ({ target }) => setCurrency(currency => currency = target.value);
@@ -24,18 +24,11 @@ const Form = ({ displayResult, setResult, result }) => {
     };
 
     return (
-        <form
-            onSubmit={onFormSubmit}
-            className="form"
-        >
+        <form onSubmit={onFormSubmit} className="form">
             <fieldset className="form__fieldset">
-                <legend className="form__legend">
-                    kalkulator walut
-                </legend>
+                <legend className="form__legend">Kalkulator walut</legend>
                 <section className="form__section">
-                    <header className="form__header">
-                        Kwota w PLN
-                    </header>
+                    <header className="form__header">Kwota w PLN</header>
                     <input
                         onChange={onInputChange}
                         value={amount}
@@ -51,15 +44,8 @@ const Form = ({ displayResult, setResult, result }) => {
                     />
                 </section>
                 <section className="form__section">
-                    <header className="form__header">
-                        Wybierz walutę
-                    </header>
-                    <select
-                        onChange={onSelectChange}
-                        name="currencyName"
-                        className="form__select"
-                        value={currency}
-                    >
+                    <header className="form__header">Wybierz walutę</header>
+                    <select onChange={onSelectChange} name="currencyName" className="form__select" value={currency}>
                         {
                             currencies.map(({ name, id }) => (
                                 <option key={id}>
@@ -70,17 +56,8 @@ const Form = ({ displayResult, setResult, result }) => {
                     </select>
                 </section>
                 <section className="form__buttonContainer">
-                    <button
-                        className="form__button form__button--submit" type="submit"
-                    >
-                        Przelicz
-                    </button>
-                    <button
-                        className="form__button"
-                        onClick={resetForm}
-                    >
-                        Wyczyść
-                    </button>
+                    <button className="form__button form__button--submit" type="submit">Przelicz</button>
+                    <button className="form__button" onClick={resetForm}>Wyczyść</button>
                 </section>
             </fieldset>
         </form>
