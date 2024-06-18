@@ -1,6 +1,66 @@
-# Getting Started with Create React App
+# Currency-converter project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Description: 
+Here is my personal currency-conventer project that will immediately help you find out how much Polish zlotys are worth in other currencies. It is simple to work with.
+---
+
+## Languages & Conventions:
+- **HTML**
+---
+- **CSS**
+    - CSS Box Model Module Level 3
+    - CSS Backgrounds and Borders Module Level 3
+    - CSS Text Decoration Module Level 3
+    - CSS Fonts Module Level 3
+    - CSS Lists and Counters Module Level 3
+    - CSS Flexible Box Layout Module Level 1
+    - CSS Grid Layout Module Level 2
+    - CSS Transitions Level 1
+    - CSS Transforms Module Level 2
+    - Media Queries Level 4
+---
+- **Java Script**
+    - ECMAScript 6+
+---
+- OpenGraph Protocol
+- BEM Covention
+- Create React App
+
+
+## Try demo of currency-converter:
+
+[Demo currency-converter]()
+
+![Project screenshot](https://raw.githubusercontent.com/OskarWlaszczuk/currency-converter-react/3f9a899b9dec436c7c4ea5fb588bd505809379a9/src/project-screenshot.png)
+
+## How to use it?
+1. First of all, you have to write numbers between 0.1 and 999999 in the form labeled *"Kwota w PLN"* (eng. *"Amount in PLN"*).
+***
+
+2. Then, you have to choose the currency that you are interested in, like:
+- EUR
+- USD
+- CHF
+- GBP
+***
+
+
+>You can do this by clicking the select element, under label named "Wybierz walutę* (ang. *"Choose currency"*) and clicking right currency name
+***
+
+3. In the last step you need to click button named *"Przelicz"* (eng. *"Convert"*). The converted amount will be displayed next to *"Wynik"* (eng.*"Result"*).
+***
+
+4. If you want to quickly reset form, click button named *"Wyczyść"* (ang. *"Reset"*).
+***
+
+**Below I posted full gif guide of using my currency-converter:**
+
+![gif guide of using currency-converter](https://raw.githubusercontent.com/OskarWlaszczuk/currency-converter-react/3f9a899b9dec436c7c4ea5fb588bd505809379a9/src/project-gif-readme.gif)
+
+>Above gif created using *ScrenToGif* app.
 
 ## Available Scripts
 
@@ -13,11 +73,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -38,33 +93,3 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
