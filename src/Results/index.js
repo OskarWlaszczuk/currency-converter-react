@@ -2,7 +2,9 @@ import "./style.css";
 
 const Results = ({ result }) => {
     return (
-        <p className="resualts">
+        <p
+            className={`resualts ${!result ? 'resualts--hidden' : ''}`}
+        >
             {
                 result
             }
