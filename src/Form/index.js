@@ -24,7 +24,7 @@ const Form = ({ displayResult, setResult, result }) => {
     };
 
     return (
-        <form onSubmit={onFormSubmit} className="form">
+        <form onSubmit={onFormSubmit}>
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Kalkulator walut</legend>
                 <section className="form__section">
