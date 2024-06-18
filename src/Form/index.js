@@ -1,16 +1,24 @@
 import { useState } from "react";
 import "./style.css";
 
-const Form = () => {
-    const [amount, setAmount] = useState(45);
-    const [currency, setCurrency] = useState("GBP");
+const Form = ({ displayResualt }) => {
+    const [amount, setAmount] = useState(10);
+    const [currency, setCurrency] = useState("Funt brytyjski");
 
     const onSelectChange = ({ target }) => setCurrency(currency => currency = target.value);
     const onInputChange = ({ target }) => setAmount(amount => amount = target.value);
 
     const onFormSubmit = event => {
         event.preventDefault();
+        displayResualt(amount, currency);
     };
+
+    const currencies = [
+        { name: "Dolar amerykański", id: "$", rate: 0.24 },
+        { name: "Euro", id: "€", rate: 0.20 },
+        { name: "Funt brytyjski", id: "£", rate: 0.22 },
+        { name: "Frank szwajcarski", id: "CHF", rate: 0.23 },
+    ];
 
     return (
         <form
@@ -49,10 +57,13 @@ const Form = () => {
                         className="form__select"
                         value={currency}
                     >
-                        <option value="USD">USD</option>
-                        <option value="GBP">GBP</option>
-                        <option value="CHF">CHF</option>
-                        <option value="EUR">EUR</option>
+                        {
+                            currencies.map(({ name, id }) => (
+                                <option key={id}>
+                                    {name}
+                                </option>
+                            ))
+                        };
                     </select>
                 </section>
                 <section className="form__buttonContainer">

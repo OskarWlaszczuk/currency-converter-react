@@ -1,7 +1,13 @@
 import "./style.css";
 
-const Resualts = () => (
-    <p className="resualts"></p>
-);
+const Resualts = ({ resualt }) => {
+    return (
+        <p className="resualts">
+            {
+                resualt
+            }
+        </p>
+    );
+};
 
 export default Resualts;
