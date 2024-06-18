@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Form from "./Form";
-import Resualts from "./Resualts";
+import Results from "./Results";
 
 function App() {
-  const [resualt, setResualt] = useState();
+  const [result, setResult] = useState();
 
   const currencies = [
     { name: "Dolar amerykański", id: "$", rate: 0.24, shortcut: "$" },
@@ -12,12 +12,12 @@ function App() {
     { name: "Frank szwajcarski", id: "CHF", rate: 0.23, shortcut: "CHF" },
   ];
 
-  const displayResualt = (amount, currency) => {
+  const displayResult = (amount, currency) => {
     const chosenCurrency = currencies.find(({ name }) => name === currency);
     chosenCurrency && (
-      setResualt(resualt => resualt =
+      setResult(result => result =
         <>
-          {amount}zł = {(chosenCurrency.rate * amount).toFixed(2)}{chosenCurrency.shortcut}
+          {amount}zł = <strong className="results__result">{(chosenCurrency.rate * amount).toFixed(2)}{chosenCurrency.shortcut}</strong>
         </>
       )
     );
@@ -25,8 +25,8 @@ function App() {
 
   return (
     <>
-      <Form displayResualt={displayResualt} />
-      <Resualts resualt={resualt} />
+      <Form displayResult={displayResult} />
+      <Results result={result} />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./style.css";
 
-const Form = ({ displayResualt }) => {
+const Form = ({ displayResult }) => {
     const [amount, setAmount] = useState(10);
     const [currency, setCurrency] = useState("Funt brytyjski");
 
@@ -10,7 +10,7 @@ const Form = ({ displayResualt }) => {
 
     const onFormSubmit = event => {
         event.preventDefault();
-        displayResualt(amount, currency);
+        displayResult(amount, currency);
     };
 
     const currencies = [
