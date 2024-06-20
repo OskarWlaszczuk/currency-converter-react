@@ -1,0 +1,24 @@
+.result {
+    background-color: #3f4273;
+    padding: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.478);
+    border-radius: 20px;
+    width: 80%;
+    min-height: 65px;
+    margin: auto;
+    text-align: center;
+    font-size: x-large;
+    text-decoration: underline;
+}
+
+.result:hover {
+    color: rgba(255, 255, 255, 0.775);
+}
+
+.result--hidden {
+    display: none;
+}
+
+.result__result {
+    font-size: larger;
+}
