@@ -2,25 +2,23 @@ import { useState } from "react";
 import "./style.css";
 import currencies from "../currencies";
 
-const Form = ({ displayResult, setResult, result }) => {
+const Form = ({ displayResult, setResult}) => {
     const [amount, setAmount] = useState("");
-    const [currency, setCurrency] = useState("Funt brytyjski");
+    const [currency, setCurrency] = useState("Euro");
 
     const resetForm = () => {
         setAmount("");
-        setCurrency("Funt brytyjski");
-
-        result && (
-            setResult("")
-        );
+        setCurrency("Euro");
+        setResult({});
     };
 
-    const onSelectChange = ({ target }) => setCurrency(currency => currency = target.value);
-    const onInputChange = ({ target }) => setAmount(amount => amount = target.value);
+    const onSelectChange = ({ target }) => setCurrency(target.value);
+    const onInputChange = ({ target }) => setAmount(target.value);
 
     const onFormSubmit = event => {
         event.preventDefault();
-        displayResult(amount, currency);
+        const chosenCurrency = currencies.find(({ name }) => name === currency);
+        displayResult(amount, chosenCurrency.rate, chosenCurrency.shortcut);
     };
 
     return (
@@ -57,7 +55,7 @@ const Form = ({ displayResult, setResult, result }) => {
                 </section>
                 <section className="form__buttonContainer">
                     <button className="form__button form__button--submit" type="submit">Przelicz</button>
-                    <button className="form__button" onClick={resetForm}>Wyczyść</button>
+                    <button className="form__button" onClick={resetForm} type="reset">Wyczyść</button>
                 </section>
             </fieldset>
         </form>
