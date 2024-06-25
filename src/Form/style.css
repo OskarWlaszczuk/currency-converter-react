@@ -25,6 +25,11 @@
     text-transform: capitalize;
 }
 
+.form__date {
+    text-align: end;
+    color: rgba(255, 246, 246, 0.832);
+}
+
 .form__section {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -34,7 +39,6 @@
     box-shadow: 0px 38px 18px -43px #5e84b3;
     padding-bottom: 25px;
     margin-bottom: 25px;
-    padding: 3%;
     transition: 0.5s;
 }
 
