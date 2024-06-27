@@ -5,7 +5,7 @@ import currencies from "../currencies";
 const Form = ({ displayResult, setResult }) => {
     const [amount, setAmount] = useState("");
     const [currency, setCurrency] = useState("Euro");
-    const [date, setDate] = useState({});
+    const [clock, setClock] = useState(<></>);
 
     const currentDate = new Date();
 
@@ -14,19 +14,24 @@ const Form = ({ displayResult, setResult }) => {
     const currentDay = currentDate.toLocaleString('pl', { day: 'numeric' });
     const currentYear = currentDate.toLocaleString('pl', { year: 'numeric' });
 
-    let currentHour = currentDate.getHours();
-    let currentMinutes = currentDate.getMinutes();
-    let currentSeconds = currentDate.getSeconds();
+    const currentHour = currentDate.getHours();
+    const currentMinutes = currentDate.getMinutes();
+    const currentSeconds = currentDate.getSeconds();
+
+    const isGreaterThan10 = time => time < 10 && (0);
 
     useEffect(() => {
-        const timeouId = setTimeout(() => {
-            setDate({
-                currentHour,
-                currentMinutes,
-                currentSeconds,
-            });
-            clearTimeout(timeouId);
-        }, 0);
+        const intervalId = setInterval(() => {
+            setClock(
+                <>
+                    Dzisiaj jest {currentWeekDay}, {currentDay} {currentMonth} {currentYear},
+                    {isGreaterThan10(currentHour)}{currentHour}:
+                    {isGreaterThan10(currentMinutes)}{currentMinutes}:
+                    {isGreaterThan10(currentSeconds)}{currentSeconds}
+                </>
+            );
+            clearInterval(intervalId);
+        });
     });
 
     const resetForm = () => {
@@ -37,7 +42,6 @@ const Form = ({ displayResult, setResult }) => {
 
     const onSelectChange = ({ target }) => setCurrency(target.value);
     const onInputChange = ({ target }) => setAmount(target.value);
-
     const onFormSubmit = event => {
         event.preventDefault();
 
@@ -53,7 +57,7 @@ const Form = ({ displayResult, setResult }) => {
                 <legend className="form__legend">Kalkulator walut</legend>
                 <section className="form__date">
                     <code>
-                        Dzisiaj jest {currentWeekDay}, {currentDay} {currentMonth} {currentYear}, { currentHour < 10 ? '0' : ''}{ currentHour}:{ currentMinutes < 10 ? '0' : ''}{ currentMinutes}:{ currentSeconds < 10 ? '0' : ''}{ currentSeconds}
+                        {clock}
                     </code>
                 </section>
                 <section className="form__section">
