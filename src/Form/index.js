@@ -1,38 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./style.css";
 import currencies from "../currencies";
+import Clock from "../Clock";
 
-const Form = ({ displayResult, setResult }) => {
+const Form = ({ displayResult, setResult}) => {
     const [amount, setAmount] = useState("");
     const [currency, setCurrency] = useState("Euro");
-    const [clock, setClock] = useState(<></>);
-
-    const currentDate = new Date();
-
-    const currentWeekDay = currentDate.toLocaleString('pl', { weekday: 'long' });
-    const currentMonth = currentDate.toLocaleString('pl', { month: 'long' });
-    const currentDay = currentDate.toLocaleString('pl', { day: 'numeric' });
-    const currentYear = currentDate.toLocaleString('pl', { year: 'numeric' });
-
-    const currentHour = currentDate.getHours();
-    const currentMinutes = currentDate.getMinutes();
-    const currentSeconds = currentDate.getSeconds();
-
-    const isGreaterThan10 = time => time < 10 && (0);
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setClock(
-                <>
-                    Dzisiaj jest {currentWeekDay}, {currentDay} {currentMonth} {currentYear},
-                    {isGreaterThan10(currentHour)}{currentHour}:
-                    {isGreaterThan10(currentMinutes)}{currentMinutes}:
-                    {isGreaterThan10(currentSeconds)}{currentSeconds}
-                </>
-            );
-            clearInterval(intervalId);
-        });
-    });
 
     const resetForm = () => {
         setAmount("");
@@ -56,9 +29,7 @@ const Form = ({ displayResult, setResult }) => {
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Kalkulator walut</legend>
                 <section className="form__date">
-                    <code>
-                        {clock}
-                    </code>
+                    {<Clock/>}
                 </section>
                 <section className="form__section">
                     <header className="form__header">Kwota w PLN</header>
