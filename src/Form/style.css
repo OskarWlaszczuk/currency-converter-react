@@ -8,12 +8,6 @@
     margin-bottom: 8px;
 }
 
-@media (max-width: 770px) {
-    .form__fieldset {
-        padding: 3%;
-    }
-}
-
 .form__legend {
     margin: auto;
     padding: 15px;
@@ -24,11 +18,6 @@
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     text-transform: capitalize;
-}
-
-.form__date {
-    text-align: end;
-    color: rgba(255, 246, 246, 0.832);
 }
 
 .form__section {
@@ -45,8 +34,8 @@
 
 @media (max-width: 770px) {
     .form__section {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, minmax(auto, 1fr));
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, minmax(auto, 100%));
         grid-gap: 10px;
         margin-bottom: 15px;
         padding-bottom: 10px;
@@ -131,7 +120,7 @@
 .form__button {
     border: 2px solid #3f4273;
     border-bottom: 15px solid #3f4273;
-    margin: 10px;
+    margin: 5px;
     padding: 20px;
     border-radius: 20px;
     background-color: rgb(51, 53, 88);
