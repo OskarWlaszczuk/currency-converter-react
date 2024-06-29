@@ -23,8 +23,8 @@ html {
   background-size: cover;
 }
 
-@media (max-width:450px) {
+@media (max-width:700px) {
   .content {
-    grid-template-columns: auto;
+    grid-template-columns: 90%;
   }
 }
