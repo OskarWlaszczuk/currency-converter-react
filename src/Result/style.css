@@ -10,6 +10,12 @@
     font-size: x-large;
 }
 
+@media (max-width:770px) {
+    .result {
+        padding: 10px;
+    }
+}
+
 .result:hover {
     color: rgba(255, 255, 255, 0.775);
 }
@@ -19,7 +25,7 @@
 }
 
 .result__result--hidden {
-  color: transparent;
+    color: transparent;
 }
 
 
