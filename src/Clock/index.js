@@ -7,15 +7,14 @@ const Clock = () => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setClock(new Date());
-            clearInterval(intervalId);
         });
-    });
+        return () => clearInterval(intervalId);
+    }, []);
+
     return (
         <p className="clock">
             <code>
-                Dzisiaj jest {clock.toLocaleString('pl', { weekday: 'long' })}, {clock.toLocaleString('pl', { day: 'numeric' })} {clock.toLocaleString('pl', { month: 'long' })} {clock.toLocaleString('pl', { year: 'numeric' })}, {clock.getHours() < 10 && (0)}{clock.getHours()}:
-                {clock.getMinutes() < 10 && ('0')}{clock.getMinutes()}:
-                {clock.getSeconds() < 10 && (0)}{clock.getSeconds()}
+                Dzisiaj jest {clock.toLocaleString("pl", { weekday: "long", day: "numeric", month: "long", year: "numeric" })} {clock.toLocaleTimeString("pl", { hours: "2-digit", minutes: "2-digit", seconds: "2-digit" })}
             </code>
         </p>
     );
