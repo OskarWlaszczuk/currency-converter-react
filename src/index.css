@@ -15,7 +15,7 @@ html {
   grid-template-columns: 65%;
   grid-template-rows: repeat(2, min-content);
   justify-content: center;
-  align-content: space-evenly;
+  align-content: center;
   align-items: center;
   background-image: url("https://youmatter.world/app/uploads/2021/04/local-currencies-alternative-economy2.jpg");
   background-position: center;

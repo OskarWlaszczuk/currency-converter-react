@@ -4,12 +4,13 @@
     background-color: #122738;
     border-radius: 10px;
     margin: auto;
-    padding: 25px;
+    padding: 5%;
+    margin-bottom: 8px;
 }
 
-@media (max-width:770px) {
+@media (max-width: 770px) {
     .form__fieldset {
-        margin-bottom: 15px;
+        padding: 3%;
     }
 }
 
@@ -42,11 +43,14 @@
     transition: 0.5s;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 770px) {
     .form__section {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2, minmax(auto, 1fr));
         grid-gap: 10px;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        justify-items: center;
     }
 }
 
@@ -67,18 +71,20 @@
     justify-self: start;
     font-size: large;
     transition: 0.4s;
+    width: 100%;
 }
 
-@media (max-width:767px) {
+@media (max-width:770px) {
     .form__header {
         justify-self: center;
         border-radius: 20px;
+        padding: 10px;
+        font-size: smaller;
     }
-}
 
-.form__header:hover {
-    font-size: larger;
-    background-color: rgba(139, 136, 134, 0.207);
+    .form__header:hover {
+        background-color: rgba(139, 136, 134, 0.207);
+    }
 }
 
 .form__field {
@@ -88,9 +94,10 @@
     border-bottom-right-radius: 20px;
 }
 
-@media (max-width:767px) {
+@media (max-width:770px) {
     .form__field {
         border-radius: 20px;
+        padding: 10px;
     }
 }
 
@@ -102,9 +109,11 @@
     text-align: center;
 }
 
-@media (max-width:767px) {
+@media (max-width:770px) {
     .form__select {
         border-radius: 20px;
+        padding: 5px;
+        width: min-content;
     }
 }
 
@@ -139,12 +148,19 @@
     .form__button {
         margin: 3px 0;
         width: 75%;
+        padding: 5px;
+        font-size: smaller;
+        border-bottom: 10px solid #3f4273;
+    }
+
+    .form__button:hover {
+        border-bottom: 10px solid #7e4040;
     }
 }
 
 .form__button:hover {
     border: 2px solid #7e4040;
-    border-bottom: 15px solid #7e4040;
+    border-bottom: 10px solid #7e4040;
     background-color: #7f3333;
 }
 
@@ -153,13 +169,15 @@
     border-bottom: 2px solid #7e4040;
 }
 
-.form__button--submit:hover {
-    border: 2px solid rgb(73, 135, 102);
-    border-bottom: 15px solid rgb(73, 135, 102);
-    background-color: rgb(51, 88, 68);
-}
-
 .form__button--submit:active {
     border-top: 10px solid rgb(73, 135, 102);
     border-bottom: 2px solid rgb(73, 135, 102);
+}
+
+@media (max-width:770px) {
+    .form__button--submit:hover {
+        border: 2px solid rgb(73, 135, 102);
+        border-bottom: 10px solid rgb(73, 135, 102);
+        background-color: rgb(51, 88, 68);
+    }
 }
