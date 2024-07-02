@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Fieldset, Legend, Section, Header, Input, Select, Container, Button, SubmitButton } from "./styled";
+import { Fieldset, Legend, Section, Header, Input, Container, Button, SubmitButton } from "./styled";
 import currencies from "../currencies";
-import Clock from "../Clock";
+import { Clock } from "./Clock";
 
 const Form = ({ displayResult, setResult }) => {
     const [amount, setAmount] = useState("");
@@ -46,7 +46,7 @@ const Form = ({ displayResult, setResult }) => {
                 </Section>
                 <Section>
                     <Header>Wybierz walutę</Header>
-                    <Select onChange={onSelectChange} name="currencyName" value={currency}>
+                    <Input as="select" onChange={onSelectChange} name="currencyName" value={currency}>
                         {
                             currencies.map(({ name, id }) => (
                                 <option key={id} value={name}>
@@ -54,7 +54,7 @@ const Form = ({ displayResult, setResult }) => {
                                 </option>
                             ))
                         };
-                    </Select>
+                    </Input>
                 </Section>
                 <Container>
                     <SubmitButton type="submit">Przelicz</SubmitButton>
