@@ -33,7 +33,7 @@ export const Section = styled.section`
     margin-bottom: 25px;
     transition: 0.5s;
 
-    @media (max-width: ${({theme}) => theme.breakPoints.tabletHorizontal}px) {
+    @media (max-width: ${({ theme }) => theme.breakPoints.tabletHorizontal}px) {
         grid-template-columns: 100%;
         grid-template-rows: repeat(2, minmax(auto, 100%));
         grid-gap: 10px;
@@ -62,7 +62,7 @@ export const Header = styled.header`
     transition: 0.4s;
     width: 100%;
 
-    @media (max-width:${({theme}) => theme.breakPoints.tabletHorizontal}px) {
+    @media (max-width:${({ theme }) => theme.breakPoints.tabletHorizontal}px) {
         justify-self: center;
         border-radius: 20px;
         padding: 10px;
@@ -80,30 +80,16 @@ export const Input = styled.input`
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 
-    @media (max-width:${({theme}) => theme.breakPoints.tabletHorizontal}px) {
+    @media (max-width:${({ theme }) => theme.breakPoints.tabletHorizontal}px) {
         border-radius: 20px;
         padding: 10px;
-    };
-`;
-
-export const Select = styled.select`
-    padding: 15px;
-    border: none;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    text-align: center;
-
-    @media (max-width:${({theme}) => theme.breakPoints.tabletHorizontal}px) {
-        border-radius: 20px;
-        padding: 5px;
-        width: min-content;
     };
 `;
 
 export const Container = styled.section`
     display: flex;
 
-    @media (max-width:${({theme}) => theme.breakPoints.tabletHorizontal}px) {
+    @media (max-width:${({ theme }) => theme.breakPoints.tabletHorizontal}px) {
         flex-direction: column;
         align-items: center;
     };
@@ -124,7 +110,7 @@ export const Button = styled.button`
     flex-basis: 49%;
     transition: 0.3s;
 
-    @media (max-width:${({theme}) => theme.breakPoints.tabletHorizontal}px) {
+    @media (max-width:${({ theme }) => theme.breakPoints.tabletHorizontal}px) {
         margin: 3px 0;
         width: 75%;
         padding: 5px;
