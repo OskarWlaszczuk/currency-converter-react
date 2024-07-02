@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Fieldset, Legend, Section, Header, Input, Container, Button, SubmitButton } from "./styled";
 import currencies from "../currencies";
 import { Clock } from "./Clock";
@@ -6,6 +6,7 @@ import { Clock } from "./Clock";
 const Form = ({ displayResult, setResult }) => {
     const [amount, setAmount] = useState("");
     const [currency, setCurrency] = useState("Euro");
+    const inputRef = useRef(null);
 
     const resetForm = () => {
         setAmount("");
@@ -17,7 +18,7 @@ const Form = ({ displayResult, setResult }) => {
     const onInputChange = ({ target }) => setAmount(target.value);
     const onFormSubmit = event => {
         event.preventDefault();
-
+        inputRef.current.focus();
         const chosenCurrency = currencies.find(({ name }) => name === currency);
         const { rate, shortcut } = chosenCurrency
 
@@ -32,6 +33,7 @@ const Form = ({ displayResult, setResult }) => {
                 <Section>
                     <Header>Kwota w PLN</Header>
                     <Input
+                        ref={inputRef}
                         onChange={onInputChange}
                         value={amount}
                         required
