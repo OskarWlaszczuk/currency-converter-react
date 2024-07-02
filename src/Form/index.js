@@ -1,9 +1,9 @@
 import { useState } from "react";
-import "./style.css";
+import { Fieldset, Legend, Section, Header, Input, Select, Container, Button, SubmitButton } from "./styled";
 import currencies from "../currencies";
 import Clock from "../Clock";
 
-const Form = ({ displayResult, setResult}) => {
+const Form = ({ displayResult, setResult }) => {
     const [amount, setAmount] = useState("");
     const [currency, setCurrency] = useState("Euro");
 
@@ -26,17 +26,14 @@ const Form = ({ displayResult, setResult}) => {
 
     return (
         <form onSubmit={onFormSubmit}>
-            <fieldset className="form__fieldset">
-                <legend className="form__legend">Kalkulator walut</legend>
-                <section className="form__date">
-                    {<Clock/>}
-                </section>
-                <section className="form__section">
-                    <header className="form__header">Kwota w PLN</header>
-                    <input
+            <Fieldset>
+                <Legend>Kalkulator walut</Legend>
+                {<Clock />}
+                <Section>
+                    <Header>Kwota w PLN</Header>
+                    <Input
                         onChange={onInputChange}
                         value={amount}
-                        className="form__field"
                         required
                         type="number"
                         min="0.1"
@@ -46,10 +43,10 @@ const Form = ({ displayResult, setResult}) => {
                         placeholder="Wpisz kwotę w PLN"
                         autoFocus
                     />
-                </section>
-                <section className="form__section">
-                    <header className="form__header">Wybierz walutę</header>
-                    <select onChange={onSelectChange} name="currencyName" className="form__select" value={currency}>
+                </Section>
+                <Section>
+                    <Header>Wybierz walutę</Header>
+                    <Select onChange={onSelectChange} name="currencyName" value={currency}>
                         {
                             currencies.map(({ name, id }) => (
                                 <option key={id} value={name}>
@@ -57,13 +54,13 @@ const Form = ({ displayResult, setResult}) => {
                                 </option>
                             ))
                         };
-                    </select>
-                </section>
-                <section className="form__buttonContainer">
-                    <button className="form__button form__button--submit" type="submit">Przelicz</button>
-                    <button className="form__button" onClick={resetForm} type="reset">Wyczyść</button>
-                </section>
-            </fieldset>
+                    </Select>
+                </Section>
+                <Container>
+                    <SubmitButton type="submit">Przelicz</SubmitButton>
+                    <Button onClick={resetForm} type="reset">Wyczyść</Button>
+                </Container>
+            </Fieldset>
         </form>
     );
 };
