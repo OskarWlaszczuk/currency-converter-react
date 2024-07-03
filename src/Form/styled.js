@@ -53,7 +53,7 @@ export const Header = styled.header`
     text-align: center;
     text-transform: capitalize;
     padding: 20px;
-    background-color: rgba(139, 136, 134, 0.132);
+    background-color:${({ theme }) => theme.colors.naturalGrey};
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     text-decoration: underline;
@@ -96,8 +96,8 @@ export const Container = styled.section`
 `;
 
 export const Button = styled.button`
-    border: 2px solid #3f4273;
-    border-bottom: 15px solid #3f4273;
+    border: 2px solid ${({ theme }) => theme.colors.EastBay};
+    border-bottom: 15px solid ${({ theme }) => theme.colors.EastBay};
     margin: 5px;
     padding: 20px;
     border-radius: 20px;
