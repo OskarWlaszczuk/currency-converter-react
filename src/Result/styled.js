@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-    background-color: #3f4273;
+    background-color: ${({ theme }) => theme.colors.EastBay};
     padding: 20px;
     border: 2px solid rgba(255, 255, 255, 0.478);
     border-radius: 20px;
