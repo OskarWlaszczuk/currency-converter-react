@@ -1,25 +1,30 @@
 import { useState } from "react";
-import Form from "./Form";
+import {Form} from "./Form";
 import Result from "./Result";
 
 function App() {
   const [result, setResult] = useState({});
 
-  const displayResult = (amount, rate, shortcut) => {
-    setResult(result => result =
-    {
-      amount,
-      rate,
-      shortcut,
-    });
+  const displayResult = (amount, code, value) => {
+    setResult(
+      (result) =>
+        (result = {
+          amount,
+          code,
+          value,
+        })
+    );
   };
 
   return (
     <>
-      <Form displayResult={displayResult} setResult={setResult} result={result} />
+      <Form
+        displayResult={displayResult}
+        setResult={setResult}
+      />
       <Result result={result} />
     </>
   );
-};
+}
 
 export default App;
