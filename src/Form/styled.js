@@ -146,3 +146,7 @@ export const SubmitButton = styled(Button)`
         border-bottom: 2px solid rgb(73, 135, 102);
     };
 `;
+
+export const Information = styled.p`
+    background-color:teal;
+`;
