@@ -11,6 +11,10 @@ export const Container = styled.div`
   text-align: center;
   font-size: x-large;
 
+  ${({ $hidden }) => $hidden && css`
+      display:none;
+  `}
+
   @media (max-width: ${({ theme }) => theme.breakPoints.tabletHorizontal}px) {
     padding: 10px;
   }
@@ -34,3 +38,8 @@ export const Content = styled.p`
       color: transparent;
     `}
 `;
+
+export const CurrencyName = styled.span`
+  color:#f54d4d;
+  font-weight:bold;
+`
