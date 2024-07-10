@@ -28,7 +28,7 @@ export const GlobalStyles = createGlobalStyle`
 
     @media (max-width:700px) {
         main {
-            grid-template-columns: 90%;
+            grid-template-columns: 100%;
         };
     };
 `;
