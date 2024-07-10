@@ -1,32 +1,36 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
+
 export const useExchangeApi = () => {
     const [exchangeDatas, setExchangeDatas] = useState({});
+    const [status, setStatus] = useState("loading");
 
     useEffect(() => {
-        setTimeout(() => {
+        const timeoutId = setTimeout(() => {
             (async () => {
                 try {
-                    const responseExchangeDatas = await axios.get("/exchange.json")
+                    const responseExchangeDatas = await axios.get("http://api.currencyapi.com/v3/historical?apikey=cur_live_wmK26OmF9Q3kRY6A3zGXQWf1vylIpEhxz04T0TD3&currencies=EUR%2CUSD%2CCHF%2CGBP&base_currency=PLN&date=2024-07-07")
+
+                    if (responseExchangeDatas.status !== 200) {
+                        throw new Error();
+                    }
 
                     setExchangeDatas({
-                        responseExchangeDatas,
                         currienciesDatas: responseExchangeDatas.data.data,
                         currenciesRatesDate:
                             new Date(responseExchangeDatas.data.meta.last_updated_at).toLocaleDateString(undefined, { day: "2-digit", month: "numeric", year: "numeric", }),
-                        errorLog: "Sprawdź połączenie z internetem. Jeżeli problem, wciąż występuje to wina leży po naszej stronie! Przepraszamy i zachęcamy do spróbowania później.",
-                        loadingLog: "Chwilę, ładuję stronę..."
-                    })
-                    //Lepsza obsługa błędów
-                } catch (error) {
-                    console.error(error)
-                }
-            })()
+                    });
+                    setStatus("succes");
+                } catch {
+                    setStatus("error");
+                };
+            })();
         }, 1000)
 
+        return () => clearTimeout(timeoutId);
     }, []);
 
-    const { currienciesDatas, currenciesRatesDate, errorLog, loadingLog, responseExchangeDatas } = exchangeDatas
+    const { currienciesDatas, currenciesRatesDate } = exchangeDatas
 
-    return { currienciesDatas, currenciesRatesDate, errorLog, loadingLog, responseExchangeDatas }
+    return { currienciesDatas, currenciesRatesDate, status }
 };
