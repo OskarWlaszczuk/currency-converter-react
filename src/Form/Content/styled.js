@@ -164,6 +164,10 @@ export const SubmitButton = styled(Button)`
 export const Information = styled.p`
    text-align:center;
    font-style:italic;
+
+   @media (max-width:${({ theme }) => theme.breakPoints.tabletHorizontal}px) {
+    font-size: x-small;
+   }
 `;
 
 export const ExchangeDate = styled.span`
