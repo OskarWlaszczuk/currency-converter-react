@@ -1,5 +1,5 @@
-import axios from "axios"
 import { useEffect, useState } from "react";
+import { sendRequest } from "./sendRequest";
 
 export const useExchangeApi = () => {
     const [exchangeDatas, setExchangeDatas] = useState({});
@@ -9,7 +9,7 @@ export const useExchangeApi = () => {
         const timeoutId = setTimeout(() => {
             (async () => {
                 try {
-                    const responseExchangeDatas = await axios.get("https://api.currencyapi.com/v3/historical?apikey=cur_live_wmK26OmF9Q3kRY6A3zGXQWf1vylIpEhxz04T0TD3&currencies=EUR%2CUSD%2CCHF%2CGBP&base_currency=PLN&date=2024-07-07")
+                    const responseExchangeDatas = await sendRequest("https://api.currencyapi.com/v3/historical?apikey=cur_live_wmK26OmF9Q3kRY6A3zGXQWf1vylIpEhxz04T0TD3&currencies=EUR%2CUSD%2CCHF%2CGBP&base_currency=PLN&date=2024-07-07")
 
                     if (responseExchangeDatas.status !== 200) {
                         throw new Error();
