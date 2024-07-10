@@ -17,6 +17,7 @@ export const Container = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakPoints.tabletHorizontal}px) {
     padding: 10px;
+    width: 100%;
   }
 
   &:hover {
